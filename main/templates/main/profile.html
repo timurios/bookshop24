@@ -1,0 +1,10 @@
+{% extends "main/header.html" %}
+{% block content %}
+
+<body>
+    {% for i in orders %}
+         <p>{{ i.product.name }}</p>
+    {% endfor %}
+</body>
+
+{% endblock %}

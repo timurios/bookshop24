@@ -1,0 +1,21 @@
+  
+{% extends "main/header.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><font face="product sans" >Name:{{ product.name }}</font></p>
+<p><font face="product sans" >Price: {{ product.price }}₸ </font></p>
+<p><font face="product sans" >Author: {{ product.writer }} </font></p>
+<p><font face="product sans" >Genre: {{ product.genre }} </font></p>
+<p><font face="product sans" >Description:{{ product.description }}</font></p>
+{% if user.is_authenticated %}
+<a href="{% url 'remove' id=product.pk %}">Remove</a>
+<a href="{% url 'update_page' id=product.pk %}">Edit</a>
+{% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>bookshop24</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .container {
+            max-width: 960px;
+        }
+
+        .pricing-header {
+            max-width: 700px;
+        }
+
+        a {
+            text-decoration: none;
+        }   
+        .button {
+	        display: inline-block;
+	        height: 129px;
+	        width: 129px;
+	        background: url(/transition.png) 0 0 no-repeat;
+	        transition: background 0.2s ease;
+        }
+ 
+.button:hover {
+	background-image: url(/transition-active.png);
+}
+    
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+</head>
+<body>
+
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+    <p class="h5 my-0 me-md-auto fw-normal"><a href="{% url 'main_page' %}"><font face="product sans" color="blue">B</font><font face="product sans" color="red">o</font><font face="product sans" color="yellow">o</font><font face="product sans" color="green">k</font>shop24</font></a></p>
+    <nav class="my-2 my-md-0 me-md-3"></nav>
+
+        
+       
+        <a class="p-2 text-dark" href="{% url 'product_list' %}"><font face="product sans">catalogue</font></a>
+        <a class="p-2 text-dark" href="{% url 'contacts' %}"><font face="product sans">contacts</font></a>
+    </nav>
+    <a class="btn btn-outline-primary" href="{% url 'profile_page' %}"><font face="product sans">my bag</font></a>
+
+    <a class="btn btn-outline-primary" href="{% url 'register' %}"><font face="product sans">Sign up</font></a>
+    <a class="btn btn-outline-primary" href="{% url 'loginpg' %}"><font face="product sans">Sign in</font></a>
+</header>
+
+
+<main class="container">
+    {% block  content %}
+
+    {% endblock %}
+
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                
+                <small class="d-block mb-3 text-muted">&copy; 2020–2021 
+                    all rights reserved
+                </small>
+                <br>
+                <img src="D:\Desktop\php-logo-bigger.png">
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">for admins</a></li>
+                    <li><a class="link-secondary" href="{% url 'contacts' %}">contacts</a></li>
+                    <li><a class="link-secondary" href="{% url 'devpage' %}">developers</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="{% url 'loginpg' %}">sign in</a></li>
+                    <li><a class="link-secondary" href="https://www.python.org/">About python</a></li>
+                    <li><a class="link-secondary" href="https://www.ruby-lang.org/ru/">About Ruby</a></li>
+                    <li><a class="link-secondary" href="https://setdata.kz/">About SetData Academy</a></li>
+                </ul>
+            </div>
+            
+                
+        </div>
+    </footer>
+
+
+</main>
+
+
+</body>
+</html>

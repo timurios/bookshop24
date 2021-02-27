@@ -1,0 +1,15 @@
+{% extends "main/header.html" %}
+{% block content %}
+
+<body>
+    <form method="post" action="{% url 'register' %}"></form>
+    <h2><font face="product sans">Sign up</font></h2>
+    {% csrf_token %}
+    <p><font face="product sans">Username:<input type="text" name="username"></font></p>
+    <p><font face="product sans">Password:<input type="password" name="password"></font></p>
+    <p><font face="product sans">Email:<input type="email" name="e-mail"></font></p>
+    <font face="product sans"><input type="submit" value="sign up"></font>
+</body>
+
+
+{% endblock %}

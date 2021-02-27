@@ -1,0 +1,31 @@
+{% extends "main/header.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>List of products</h1>
+{% if user.is_authenticated %}
+<a href="{%url 'add_page' %}">Add Product</a>
+{% endif %}
+{%for i in products%}
+<div class="card" style="width: 70rem;" >
+    <!-- <img src="Без названия.png" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title"><p><font face="product sans" >{{i.name}}</font></p></h5>
+      <p class="card-text"><p><font face="product sans" >{{i.price}} ₸  </font></p></p>
+      <p class="card-text"><p><font face="product sans" >tags:{{i.description}}</font></p></p>
+      <p class="card-text"><p><font face="product sans" >date:{{i.created_date}}</font></p></p>
+    </div>
+  </div>
+>
+<button type="button" class="btn btn-danger"><a href="{%url 'product_get' id=i.pk%}"><font face="product sans" color="black" >more</font></a></button>
+<button type="button" class="btn btn-primary"><a href="{#}"><font face="product sans" color="black" >add to cart</font></a></button>
+<br>
+<hr>
+{%endfor%}
+</body>
+</html>
+{%endblock%}

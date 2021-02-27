@@ -1,0 +1,39 @@
+{% extends "main/header.html" %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4"><font face="product sans">Products</font></h1>
+</div>
+<center>
+
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <font face="product sans"><input type="submit" value="find"></font>
+</form>
+</center>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    {% for i in products %}
+        <div class="col">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 fw-normal"><font face="product sans">{{ i.name }}</font></h4>
+                </div>
+                <div class="card-body">
+                    <img src="{{ i.image }}" width="200" height="200">
+                    <h1 class="card-title pricing-card-title"><font face="product sans"> {{ i.price }}</font>₸</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li><font face="product sans"> genre:{{i.genre}}</font></li>
+                       
+                    </ul>
+                    <a href="{% url 'product_get' id=i.pk %}"
+                       class="w-100 btn btn-lg btn-outline-primary"><font face="product sans"> more</font></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
